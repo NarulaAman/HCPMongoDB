@@ -1,0 +1,11 @@
+---
+applications:
+- name: hcp-cf-mongodb-tutorial
+  memory: 512M
+  host: hcp-cf-mongodb-tutorial
+  path: target/hcp-cf-mongodb-tutorial-1.0-SNAPSHOT.jar
+  buildpack: git://github.com/cloudfoundry/java-buildpack.git
+  services:
+  - mongo-service
+  env:
+   JBP_CONFIG_OPEN_JDK_JRE: '{jre: { version: 1.7.0_+ }}'

@@ -1,0 +1,4 @@
+com\sap\hcp\cf\tutorials\mongodb\model\DBObject.class
+com\sap\hcp\cf\tutorials\mongodb\model\Result.class
+com\sap\hcp\cf\tutorials\mongodb\RootController.class
+com\sap\hcp\cf\tutorials\mongodb\HCPWebApplication.class

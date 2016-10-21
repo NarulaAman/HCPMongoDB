@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#downloadBtn").click(function(){
+    //$.get("/fileDownload", function(data, status){
+        //alert("Data: " + data + "\nStatus: " + status);
+    //});
+    
+    //var imageName = "image1";
+    
+	$.ajax({
+		  url: "/fileDownload",
+		  type: "get", //send it through get method
+		  data:{imageName:"Myfile1"},
+		  success: function(response) {
+		    //Do Something
+		  },
+		  error: function(xhr) {
+		    //Do Something to handle error
+		  }
+		});
+    
+});
+});
+
+</script>
+
+</head>
+<body>
+<h1>Cloud Foundry MongoDB POC</h1>
+<form action="/fileUpload" enctype="multipart/form-data" method="post">
+
+<table>
+
+<tr>
+<th colspan="2" align="left">File Upload</th>
+</tr>
+
+<tr> 
+<td><label id="fileLabel" > File to Upload:</label></td> 
+<td><input id="file" name="file" type="file"></td>
+</tr>
+
+<tr> 
+<td><label id="imageLabel" > File Name:</label></td>
+<td><input id="imageName" name="imageName"></td>
+</tr>
+
+<tr>
+<td ><input  value="Upload" name="fileUpload" type="submit"></td>
+</tr>
+
+<tr><th colspan="2" align="left" >File Download</th></tr>
+<tr> <td><label id="selectFileLabel" >Select File: </label></td> <td><select id="imageNames" name="imageNames">
+
+</select></td>
+
+</tr>
+<tr><td><input id="downloadBtn" value="Download" name="fileDownload" type="button"></td></tr>
+</table>
+
+
+
+
+</form>
+</body>
+</html>
